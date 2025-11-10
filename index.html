@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dormdeal — Buy & Sell Inside Your Hostel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #faf8f6;
+      color: #222;
+    }
+
+   
+    header {
+      background-color: #D97706;
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    header .btn-sell {
+      background: white;
+      color: #D97706;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+ 
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1.5rem auto;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .search-bar button {
+      padding: 0.75rem 1.25rem;
+      border: none;
+      background-color: #D97706;
+      color: white;
+      border-radius: 0 8px 8px 0;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+ 
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: 500;
+      /* transition: background 0.2s; */
+    }
+
+    .category:hover {
+      background: #fff3e0;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      /* transition: transform 0.2s ease; */
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      /* object-fit: cover; */
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .price {
+      color: #D97706;
+      font-weight: 700;
+      margin: 0.25rem 0;
+    }
+
+    .desc {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🏠 Dormdeal</h1>
+    <a href="sell.html" class="btn-sell">+ Sell</a>
+  </header>
+
+ 
+  <div class="search-bar">
+    <input type="text" placeholder="Search for items, e.g. table, shoes, books...">
+    <button>Search</button>
+  </div>
+
+
+  <div class="categories">
+    <div class="category">Furniture</div>
+    <div class="category">Electronics</div>
+    <div class="category">Books</div>
+    <div class="category">Clothing</div>
+    <div class="category">Others</div>
+  </div>
+
+
+  <section class="items-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=60" alt="Chair">
+      <div class="card-body">
+        <h3>Study Chair</h3>
+        <p class="price">₹400</p>
+        <p class="desc">Comfortable chair in good condition.</p>
+        <p class="contact">Contact: Room 104, Block A</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=60" alt="Headphones">
+      <div class="card-body">
+        <h3>Bluetooth Headphones</h3>
+        <p class="price">₹600</p>
+        <p class="desc">Almost new, great sound quality.</p>
+        <p class="contact">Contact: +91 98765 43210</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60" alt="Books">
+      <div class="card-body">
+        <h3>Engineering Books Set</h3>
+        <p class="price">₹350</p>
+        <p class="desc">3 books for 2nd-year students.</p>
+        <p class="contact">Contact: Room 202, Block C</p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    &copy; 2025 Dormdeal — Buy & Sell Within Your Hostel 🏠
+  </footer>
+</body>
+</html>
