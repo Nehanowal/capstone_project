@@ -3,144 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dormdeal | Post Your Item</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+  <title>Post Your Item | DormDeal</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #faf8f6;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
       margin: 0;
       padding: 0;
     }
 
-
-    header {
-      background-color: #D97706;
-      color: white;
-      padding: 1rem 1.5rem;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-
-    .sell-container {
-      max-width: 500px;
-      background: white;
-      margin: 2rem auto;
-      padding: 2rem;
+    .form-container {
+      max-width: 450px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 25px 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .sell-container h2 {
+    h2 {
       text-align: center;
-      color: #D97706;
-      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
     }
 
-    .sell-container p {
+    p {
       text-align: center;
-      color: #555;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
     }
 
-
-    form label {
+    label {
       display: block;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #333;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
 
-    form input, form textarea {
+    input, textarea {
       width: 100%;
-      padding: 0.7rem;
-      margin-bottom: 1.2rem;
+      padding: 10px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 14px;
     }
 
-    form textarea {
-      resize: none;
-      height: 80px;
+    textarea {
+      resize: vertical;
     }
 
-    form button {
+    button {
       width: 100%;
-      background-color: #D97706;
+      background-color: #007bff;
       color: white;
       border: none;
-      padding: 0.9rem;
+      padding: 12px;
+      font-size: 16px;
       border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
     }
 
-    form button:hover {
-      background-color: #b96b05;
+    button:hover {
+      background-color: #0056b3;
     }
-
 
     footer {
       text-align: center;
-      color: #444;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      padding-bottom: 1rem;
+      font-size: 13px;
+      color: #888;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-
-
-  <header>Post Your Item</header>
-
-
-  <div class="sell-container">
-    <h2>Sell something you no longer need 🏠</h2>
+  <div class="form-container">
+    <h2>Sell Something You No Longer Need 🏠</h2>
     <p>Right inside your hostel! Fill the form below to list your item.</p>
 
-    <form action="#" method="post">
-      <label for="item-name">Item Name</label>
-      <input type="text" id="item-name" name="item-name" placeholder="e.g. Study Table" required>
+    <form>
+      <label for="itemName">Item Name</label>
+      <input type="text" id="itemName" placeholder="e.g. Study Table" required>
 
       <label for="price">Price (₹)</label>
-      <input type="number" id="price" name="price" placeholder="e.g. 500" required>
+      <input type="number" id="price" placeholder="e.g. 500" required>
 
       <label for="description">Description</label>
-      <textarea id="description" name="description" placeholder="e.g. Wooden table in good condition" required></textarea>
+      <textarea id="description" rows="3" placeholder="e.g. Wooden table in good condition" required></textarea>
 
-      <label for="image-url">Image URL</label>
-      <input type="url" id="image-url" name="image-url" placeholder="Paste image link" required>
+      <label for="imageUrl">Image URL</label>
+      <input type="url" id="imageUrl" placeholder="Paste image link" required>
 
       <label for="contact">Contact Info</label>
-      <input type="text" id="contact" name="contact" placeholder="e.g. Room 105, Block B or +91 98765..." required>
+      <input type="text" id="contact" placeholder="e.g. Room 105, Block B or +91 98765..." required>
+
+      <label for="timing">Available Timing</label>
+      <input type="text" id="timing" placeholder="e.g. 5 PM – 8 PM" required>
 
       <button type="submit">Post Item</button>
     </form>
+
+    <footer>© DormDeal — Made for Hostel Life 🏠</footer>
   </div>
-
-  
-  <footer>
-    @ Dormdeal — Made for Hostel Life 🏠
-  </footer>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
