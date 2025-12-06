@@ -151,15 +151,17 @@ button:hover {
       <div class="login-box">
         <h1>🏠 Dormdeal</h1>
         <h3>Welcome back! Please log in to continue.</h3>
-
+        <p id="message"></p>
         <form>
-          <label>Username</label>
-          <input type="text" placeholder="Enter your username" required />
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" required  id="form-email"/>
 
           <label>Password</label>
-          <input type="password" placeholder="Enter your password" required />
-
-          <button type="submit">Sign up</button>
+          <input type="password" placeholder="Enter your password" required  id="form-password"/>
+          
+          <!-- i have created a fucntion which helps me navigate to different html pages -->
+           <!-- fn("str":"<name>.html")=>None -->
+          <button type="submit" onclick="navigate('index.html')">Sign up</button>
 
           <div class="extra-links">
             <a href="#">Forgot Password?</a>
@@ -169,5 +171,7 @@ button:hover {
       </div>
     </div>
   </div>
+  <script src="./script/login.js"></script>
+  <script src="./script/index.js"></script>
 </body>
 </html>

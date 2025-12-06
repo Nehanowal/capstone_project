@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            margin: 0;
+        }
+
+        header {
+            background: white;
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: #2563EB;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-container {
+            width: 90%;
+            max-width: 700px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+
+        .cart-item img {
+            width: 120px;
+            border-radius: 6px;
+        }
+
+        .cart-item-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .remove-btn {
+            background: #ff4d4d;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .checkout-btn {
+            margin-top: 1rem;
+            width: 100%;
+            background: #2563EB;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .empty-msg {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        🛒 Your Cart
+        <a href="index.html" style="color:#2563EB; text-decoration:none;">⬅ Back</a>
+    </header>
+
+    <div class="cart-container" id="cartItems"></div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        console.log(cart)
+
+        function renderCart() {
+            const container = document.getElementById("cartItems");
+
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="empty-msg">Your cart is empty 😔</p>`;
+                return;
+            }
+
+            container.innerHTML = cart.map((item, index) => {
+                console.log(item)
+                console.log(item.elementImage)
+                console.log(item.elementName)
+                console.log(item.elementPrice)
+                return (
+                    `
+      <div class="cart-item">
+        <img src="./${item.elementImage}">
+        <div class="cart-item-info">
+          <h3>${item.elementName}</h3>
+          <p>Price: ₹${item.elementPrice}</p>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+      </div>
+    `
+                )
+            }).join("") + `
+      <button class="checkout-btn">Proceed to Checkout</button>
+    `;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        renderCart();
+    </script>
+</body>
+
+</html>
